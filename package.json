@@ -1,0 +1,69 @@
+{
+  "name": "@artemisag/i18n-js-plus",
+  "version": "1.0",
+  "module": "dist/i18n-js-plus.esm.js",
+  "main": "dist/i18n-js-plus.cjs.js",
+  "license": "MIT",
+  "repository": "git@github.com:artemis-ag/i18n-js-plus.git",
+  "dependencies": {
+    "i18n-js": "^3.8"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.3",
+    "@babel/eslint-parser": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-proposal-decorators": "^7.8.3",
+    "@babel/plugin-transform-runtime": "^7.14.3",
+    "@babel/preset-env": "^7.14.4",
+    "@babel/preset-react": "^7.9.4",
+    "@babel/runtime": "^7.14.0",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.15.6",
+    "eslint": "^7.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-standard": "^5.0.0",
+    "jest": "^27.0.3",
+    "jest-fetch-mock": "^3.0",
+    "jsdom": "^16.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "rollup": "^2.50.5",
+    "rollup-jest": "^1.1.1",
+    "@rollup/plugin-babel": "^5.3.0",
+    "@rollup/plugin-commonjs": "^20.0.0",
+    "@rollup/plugin-json": "^4.0.0",
+    "@rollup/plugin-node-resolve": "^13.0.0"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "watch": "rollup -c -w",
+    "test": "jest --verbose",
+    "test:ci": "jest spec --maxWorkers 2",
+    "lint": "node_modules/.bin/eslint src spec"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "automock": false,
+    "setupFiles": [
+      "./setupJest.js"
+    ],
+    "transform": {
+      "^.+\\.js?$": "babel-jest"
+    },
+    "testPathIgnorePatterns": [
+      "/tests/fixtures/",
+      "/tests/support/",
+      "/dist/",
+      "/node_modules/",
+      "/rollup.config.js",
+      "/setupJest.js"
+    ]
+  },
+  "files": [
+    "dist"
+  ]
+}
